@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
+import { LocationListComponent } from './location-list/location-list.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([{ path: '', component: LocationListComponent }]),
   ],
+  declarations: [AppComponent, TopBarComponent, LocationListComponent],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
