@@ -5,4 +5,7 @@
   <p>{{ location.city }}</p>
   <p>{{ location.score }}</p>
   <p>{{ location.createdAt }}</p>
+  <a [routerLink]="['/edit', location.id]">
+    edit
+  </a>
 </div>
