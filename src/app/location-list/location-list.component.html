@@ -3,7 +3,9 @@
 <div *ngFor="let location of locations">
 
   <h3>
-      {{ location.name }}
+      <a [routerLink]="['/locations', location.id]">
+        {{ location.name }}
+      </a>
   </h3>
 
 </div>

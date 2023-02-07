@@ -1,9 +1,9 @@
 export interface Locations {
-  id: number;
+  id: string;
   name: string;
   city: string;
   score: number;
-  createdAt: Date;
+  createdAt: string;
 }
 
 export const locations = [
