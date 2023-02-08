@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
 import { Locations, locations } from '../locations';
@@ -22,5 +23,9 @@ export class EditComponent implements OnInit {
     this.location = locations.find(
       (location) => location.id === locationIdFromRoute
     );
+  }
+
+  onSubmit(form: NgForm) {
+    console.log(form);
   }
 }
