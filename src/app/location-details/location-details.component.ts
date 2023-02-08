@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ModalService } from '../modal.service';
 
 import { Locations, locations } from '../locations';
 
@@ -11,7 +12,10 @@ import { Locations, locations } from '../locations';
 export class LocationDetailsComponent implements OnInit {
   location: Locations | undefined;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private modalService: ModalService
+  ) {}
 
   ngOnInit() {
     // First get the location from the current route.
@@ -22,5 +26,9 @@ export class LocationDetailsComponent implements OnInit {
     this.location = locations.find(
       (location) => location.id === locationIdFromRoute
     );
+  }
+
+  open() {
+    this.modalService.open();
   }
 }

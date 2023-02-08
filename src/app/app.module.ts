@@ -9,6 +9,7 @@ import { LocationListComponent } from './location-list/location-list.component';
 import { LocationDetailsComponent } from './location-details/location-details.component';
 import { EditComponent } from './edit/edit.component';
 import { CreateComponent } from './create/create.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { CreateComponent } from './create/create.component';
     LocationDetailsComponent,
     EditComponent,
     CreateComponent,
+    ModalComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

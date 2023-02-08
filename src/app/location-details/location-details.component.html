@@ -6,6 +6,9 @@
   <p>{{ location.score }}</p>
   <p>{{ location.createdAt }}</p>
   <a [routerLink]="['/edit', location.id]">
-    edit
+    Edit
+  </a>
+  <a (click)="open()">
+    Delete
   </a>
 </div>
