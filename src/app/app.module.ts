@@ -8,6 +8,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { LocationListComponent } from './location-list/location-list.component';
 import { LocationDetailsComponent } from './location-details/location-details.component';
 import { EditComponent } from './edit/edit.component';
+import { CreateComponent } from './create/create.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { EditComponent } from './edit/edit.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: LocationListComponent },
+      { path: 'toevoegen', component: CreateComponent },
       { path: 'locations/:locationId', component: LocationDetailsComponent },
       { path: 'edit/:locationId', component: EditComponent },
     ]),
@@ -25,6 +27,7 @@ import { EditComponent } from './edit/edit.component';
     LocationListComponent,
     LocationDetailsComponent,
     EditComponent,
+    CreateComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
