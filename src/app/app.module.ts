@@ -10,6 +10,8 @@ import { LocationDetailsComponent } from './location-details/location-details.co
 import { EditComponent } from './edit/edit.component';
 import { CreateComponent } from './create/create.component';
 import { ModalComponent } from './modal/modal.component';
+import { GraphQLModule } from './graphql.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -21,6 +23,8 @@ import { ModalComponent } from './modal/modal.component';
       { path: 'locations/:locationId', component: LocationDetailsComponent },
       { path: 'edit/:locationId', component: EditComponent },
     ]),
+    GraphQLModule,
+    HttpClientModule,
   ],
   declarations: [
     AppComponent,

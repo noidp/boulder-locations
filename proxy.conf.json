@@ -1,0 +1,8 @@
+{
+  "/graphql/*": {
+    "target": "https://bouldering-demo.k8.vasio.nl/api/graphql",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
