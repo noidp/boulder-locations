@@ -1,6 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { locations } from '../locations';
+import { Component, OnInit } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import { GET_GYMS } from '../graphql/graphql.queries';
 
@@ -9,28 +7,22 @@ import { GET_GYMS } from '../graphql/graphql.queries';
   templateUrl: './location-list.component.html',
   styleUrls: ['./location-list.component.scss'],
 })
-export class LocationListComponent implements OnInit, OnDestroy {
-  locations = locations;
-
-  loading: boolean;
-  gyms: any;
-
-  private querySubscription: Subscription;
+export class LocationListComponent implements OnInit {
+  boulderingGyms: any[];
+  loading = true;
+  error: any;
 
   constructor(private apollo: Apollo) {}
 
   ngOnInit() {
-    this.querySubscription = this.apollo
-      .watchQuery<any>({
+    this.apollo
+      .watchQuery({
         query: GET_GYMS,
       })
-      .valueChanges.subscribe(({ data, loading }) => {
-        this.loading = loading;
-        this.gyms = data.gyms;
+      .valueChanges.subscribe((result: any) => {
+        this.boulderingGyms = result.data.boulderingGyms;
+        this.loading = result.loading;
+        this.error = result.error;
       });
-  }
-
-  ngOnDestroy() {
-    this.querySubscription.unsubscribe();
   }
 }

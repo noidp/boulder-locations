@@ -1,11 +1,14 @@
 <h2>Locations</h2>
 
-<div *ngFor="let location of locations">
 
-  <h3>
-      <a [routerLink]="['/locations', location.id]">
-        {{ location.name }}
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="error">Error :(</div>
+<div *ngIf="boulderingGyms">
+  <div *ngFor="let boulderingGym of boulderingGyms">
+    <h3>
+      <a [routerLink]="['/locations', boulderingGym.id]">
+        {{ boulderingGym.name}}
       </a>
-  </h3>
-
+    </h3>
+  </div>
 </div>
