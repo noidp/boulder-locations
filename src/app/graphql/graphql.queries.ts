@@ -11,4 +11,16 @@ const GET_GYMS = gql`
     }
   }
 `;
-export { GET_GYMS };
+
+const GET_GYM = gql`
+  query getGym($id: ID!) {
+    boulderingGym(where: { id: $id }) {
+      id
+      name
+      city
+      score
+      createdAt
+    }
+  }
+`;
+export { GET_GYMS, GET_GYM };

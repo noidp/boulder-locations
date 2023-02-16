@@ -1,11 +1,13 @@
 <h2>location Details</h2>
 
-<div *ngIf="location">
-  <h3>{{ location.name }}</h3>
-  <p>{{ location.city }}</p>
-  <p>{{ location.score }}</p>
-  <p>{{ location.createdAt }}</p>
-  <a [routerLink]="['/edit', location.id]">
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="error">Error :(</div>
+<div *ngIf="boulderingGym">
+  <h3>{{ boulderingGym.name }}</h3>
+  <p>{{ boulderingGym.city }}</p>
+  <p>{{ boulderingGym.score }}</p>
+  <p>{{ boulderingGym.createdAt }}</p>
+  <a [routerLink]="['/edit', boulderingGym.id]">
     Edit
   </a>
   <a (click)="open()">
