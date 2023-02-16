@@ -4,8 +4,6 @@ import { GET_GYM } from '../graphql/graphql.queries';
 import { ActivatedRoute } from '@angular/router';
 import { ModalService } from '../modal.service';
 
-import { Locations, locations } from '../locations';
-
 @Component({
   selector: 'app-location-details',
   templateUrl: './location-details.component.html',
@@ -15,8 +13,6 @@ export class LocationDetailsComponent implements OnInit {
   boulderingGym: any[];
   loading = true;
   error: any;
-
-  location: Locations | undefined;
 
   constructor(
     private apollo: Apollo,
@@ -28,11 +24,6 @@ export class LocationDetailsComponent implements OnInit {
     // First get the location from the current route.
     const routeParams = this.route.snapshot.paramMap;
     const locationIdFromRoute = routeParams.get('locationId');
-
-    // Find the location that correspond with the id provided in route.
-    this.location = locations.find(
-      (location) => location.id === locationIdFromRoute
-    );
 
     // Apollo
     this.apollo
