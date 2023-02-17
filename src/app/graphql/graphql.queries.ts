@@ -23,4 +23,22 @@ const GET_GYM = gql`
     }
   }
 `;
-export { GET_GYMS, GET_GYM };
+
+const ADD_GYM = gql`
+  mutation createGym($data: BoulderingGymCreateInput!) {
+    createBoulderingGym(data: $data) {
+      id
+      name
+      city
+      score
+      createdAt
+    }
+  }
+`;
+
+export { GET_GYMS, GET_GYM, ADD_GYM };
+
+export interface CreateGymResponse {
+  createBoulderingGym: string;
+  loading: boolean;
+}
