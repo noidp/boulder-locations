@@ -12,7 +12,6 @@ import { NgForm } from '@angular/forms';
 })
 export class ModalComponent implements OnInit {
   display$: Observable<'open' | 'close'>;
-  id: string = '';
   url = window.location.href;
 
   constructor(private modalService: ModalService, private apollo: Apollo) {}
