@@ -1,16 +1,28 @@
-<h2>location Details</h2>
-
 <div *ngIf="loading">Loading...</div>
 <div *ngIf="error">Error :(</div>
-<div *ngIf="boulderingGym">
-  <h3>{{ boulderingGym.name }}</h3>
-  <p>{{ boulderingGym.city }}</p>
-  <p>{{ boulderingGym.score }}</p>
-  <p>{{ boulderingGym.createdAt }}</p>
-  <a [routerLink]="['/edit', boulderingGym.id]">
-    Edit
-  </a>
-  <a (click)="open()">
-    Delete
-  </a>
+<div *ngIf="boulderingGym" class="mt-5 card">
+  <div class="card-header">
+    <div class="row">
+      <div class="col">location Details</div>
+      <div class="col text-end">{{ boulderingGym.createdAt }}</div>
+    </div>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ boulderingGym.name }}</h5>
+    <p class="card-text">{{ boulderingGym.city }}</p>
+    <p class="card-text"><b>Beoordeling:</b> {{ boulderingGym.score }}</p>
+
+    <div class="row">
+      <div class="col-1">
+        <a [routerLink]="['/edit', boulderingGym.id]" class="btn btn-secondary">
+          Edit
+        </a>
+      </div>
+      <div class="col-1">
+        <a (click)="open()" class="btn btn-outline-secondary">
+          Delete
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
