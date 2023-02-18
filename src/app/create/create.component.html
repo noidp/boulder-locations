@@ -33,10 +33,10 @@
           <div class="input-group mb-3">
             <label class="input-group-text" for="inputGroupSelect01">Beoordeling</label>
             <select
+              type="select"
               id="score"
-              ngModel
+              [(ngModel)]="score"
               name="score"
-              class="form-select"
               id="inputGroupSelect01">
               <option selected>kies score...</option>
               <option value="0">0</option>

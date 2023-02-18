@@ -25,7 +25,7 @@ export class CreateComponent {
           data: {
             name: this.name,
             city: this.city,
-            score: this.score,
+            score: Number(this.score),
           },
         },
       })
