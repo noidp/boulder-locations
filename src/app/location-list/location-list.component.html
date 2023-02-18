@@ -1,14 +1,18 @@
-<h2>Locations</h2>
-
-
 <div *ngIf="loading">Loading...</div>
 <div *ngIf="error">Error :(</div>
-<div *ngIf="boulderingGyms">
-  <div *ngFor="let boulderingGym of boulderingGyms">
-    <h3>
-      <a [routerLink]="['/locations', boulderingGym.id]">
-        {{ boulderingGym.name}}
-      </a>
-    </h3>
+<div *ngIf="boulderingGyms" class="mt-5">
+  <div *ngFor="let boulderingGym of boulderingGyms" class="list-group w-auto">
+    <a [routerLink]="['/locations', boulderingGym.id]" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+      <span class="material-symbols-outlined">
+        location_on
+      </span>
+      <div class="d-flex gap-2 w-100 justify-content-between">
+        <div>
+          <h6 class="mb-0">{{ boulderingGym.name}}</h6>
+          <p class="mb-0 opacity-75">{{ boulderingGym.city }}</p>
+        </div>
+        <small class="opacity-50 text-nowrap">{{ boulderingGym.score }}</small>
+      </div>
+    </a>
   </div>
 </div>
