@@ -28,18 +28,13 @@ section {
     width: 300px;
 
     background: white;
-    padding: 64px;
 
     border-radius: 8px;
 
     box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
   }
 
-  button.close {
-    background: none;
-    color: inherit;
-    border: none;
-    font: inherit;
+  button.btn-close {
     cursor: pointer;
     outline: none;
 

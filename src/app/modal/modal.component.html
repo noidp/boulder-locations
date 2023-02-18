@@ -2,12 +2,13 @@
   <section [class.open]="display === 'open'"
            (click)="close()">
     <div (click)="$event.stopPropagation()">
-      <button class="close"
-              type="button"
-              (click)="close()">X</button>
-              <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-                  <button type="submit">Verwijderen</button>
-              </form>
+      <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+      <div class="container text-center mt-5">
+        <h4>Weet je het zeker?</h4>
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <button type="submit" class="btn btn-danger mt-2">Verwijderen</button>
+        </form>
+      </div>
     </div>
   </section>
 </ng-container>
