@@ -5,8 +5,9 @@
       <button class="close"
               type="button"
               (click)="close()">X</button>
-
-      <h1>Hello World</h1>
+              <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                  <button type="submit">Verwijderen</button>
+              </form>
     </div>
   </section>
 </ng-container>
