@@ -36,9 +36,26 @@ const ADD_GYM = gql`
   }
 `;
 
-export { GET_GYMS, GET_GYM, ADD_GYM };
+const EDIT_GYM = gql`
+  mutation updateGym($id: ID!, $data: BoulderingGymUpdateInput!) {
+    updateBoulderingGym(data: $data, where: { id: $id }) {
+      id
+      name
+      city
+      score
+      createdAt
+    }
+  }
+`;
+
+export { GET_GYMS, GET_GYM, ADD_GYM, EDIT_GYM };
 
 export interface CreateGymResponse {
   createBoulderingGym: string;
+  loading: boolean;
+}
+
+export interface EditGymResponse {
+  updateBoulderingGym: string;
   loading: boolean;
 }

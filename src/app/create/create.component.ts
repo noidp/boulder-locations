@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Apollo } from 'apollo-angular';
-import { v4 as uuid } from 'uuid';
 import { ADD_GYM, CreateGymResponse } from '../graphql/graphql.queries';
 import { NgForm } from '@angular/forms';
 
@@ -17,12 +16,6 @@ export class CreateComponent {
   createdAt: Date;
 
   constructor(private apollo: Apollo) {}
-
-  ngOnInit() {}
-
-  createGym() {
-    // ... you'll implement this in a bit
-  }
 
   onSubmit(form: NgForm) {
     this.apollo
