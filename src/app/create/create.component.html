@@ -1,41 +1,62 @@
-<form (ngSubmit)="onSubmit(f)" #f="ngForm">
-  <div id="div">
-    <div>
-      <label for="name">Naam</label>
-      <input
-        type="text"
-        id="name"
-        [(ngModel)]="name"
-        name="name">
-    </div>
-    <div>
-      <label for="city">Stad</label>
-      <input
-        type="text"
-        id="city"
-        [(ngModel)]="city"
-        name="city">
-    </div>
-    <div>
-      <label for="score">Beoordeling</label>
-      <select
-        id="score"
-        ngModel
-        name="score">
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-      </select>
-    </div>
-    <button type="submit">toevoegen</button>
-
+<div class="mt-5 card">
+  <div class="card-header">
+    Locatie toevoegen
   </div>
-</form>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Naam</span>
+        <input
+          type="text"
+          id="name"
+          [(ngModel)]="name"
+          name="name"
+          class="form-control"
+          placeholder="Locatie naam"
+          aria-label="Locatie naam"
+          aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Stad</span>
+        <input
+          type="text"
+          id="city"
+          [(ngModel)]="city"
+          name="city"
+          class="form-control"
+          placeholder="Stad"
+          aria-label="Stad"
+          aria-describedby="basic-addon1">
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01">Beoordeling</label>
+            <select
+              id="score"
+              ngModel
+              name="score"
+              class="form-select"
+              id="inputGroupSelect01">
+              <option selected>kies score...</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div id="div">
+        <button type="submit" class="btn btn-outline-secondary">toevoegen</button>
+      </div>
+    </form>
+  </div>
+</div>
