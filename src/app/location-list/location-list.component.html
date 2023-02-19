@@ -1,5 +1,5 @@
-<div *ngIf="loading">Loading...</div>
-<div *ngIf="error">Error :(</div>
+<div *ngIf="loading">Laden...</div>
+<div *ngIf="error">Fout :(</div>
 <div *ngIf="boulderingGyms" class="mt-5">
   <div *ngFor="let boulderingGym of boulderingGyms" class="list-group w-auto">
     <a [routerLink]="['/locations', boulderingGym.id]" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
